@@ -4,8 +4,8 @@ print_text() {
 }
 
 print_text "Installing fonts"
-sudo mkdir -p /usr/share/fonts/custom
-sudo cp -r $(dirname -- "$0")/../config-files/usr/share/fonts/custom/* /usr/share/fonts/custom
+sudo mkdir -p /usr/local/share/fonts
+sudo cp -r $(dirname -- "$0")/../config-files/usr/local/share/fonts/* /usr/local/share/fonts/
 fc-cache -f
 
 print_text "Setting up Cinnamon desktop"

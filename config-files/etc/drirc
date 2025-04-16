@@ -1,0 +1,12 @@
+<driconf>
+   <device driver="vmwgfx">
+        <application name="cinnamon" executable="cinnamon">
+            <option name="glx_extension_override" value="-GLX_EXT_buffer_age -GLX_OML_sync_control -GLX_SGI_video_sync" />
+        </application>
+    </device>
+    <device>
+        <application name="cinnamon" executable="cinnamon">
+            <option name="adaptive_sync" value="false" />
+        </application>
+    </device>
+</driconf>
