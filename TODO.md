@@ -1,6 +1,5 @@
 - install scripts
   - Pulsar
-  - OnlyOffice
 
 - Cinnamon setup
   - panel

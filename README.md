@@ -5,15 +5,11 @@ https://www.linuxmint.com/download_lmde.php
 1. `sudo apt update && sudo apt upgrade -y`
 2. Follow welcome screen recommendations
 3. Setup languages with mintlocale
-4. Run tasks:
-    - post-install
-    - cinnamon-setup
-    - gaming-setup
+4. Run bootstrap
 
 ## Apps
 ### External
 - Pulsar ([deb](https://pulsar-edit.dev/download.html#regular-releases))
-- OnlyOffice ([deb](https://www.onlyoffice.com/download-desktop.aspx#download-desktop-header-linux))
 
 ### Tweaks
 #### Firefox
@@ -25,9 +21,34 @@ https://www.linuxmint.com/download_lmde.php
 #### OnlyOffice
 - Change settings: name, scaling, theme
 
+#### Steam
+- launch options:
+  - `gamescope -W 3440 -H 1440 -r 160 -f -- %command%`
+  - `gamescope -W 1920 -H 1080 -r 60 -f -- %command%`
+
 ## Cinnamon
 ### Applets
 - Lock keys indicator with notifications
 - Automatic dark/light themes
+- Weather
+
+#### Menu
+- Panel > Appearance > Use a custom icon and label: false
+- Panel > Behavior > Use menu animations: true
+- Menu > Layout and content > Show category icons: false
+- Menu > Layout and content > Application icon size (px): 24
+- Menu > Layout and content > Show favorites and session buttons: false
+
+#### Grouped window list
+- General > Show windows from all workspaces: true
+
+#### Calendar
+- Display > Use a custom date format: true
+- Display > Date format: %H:%M
+
+#### Sound
+- Menu > Control Players: false
+- Menu > Always show input switch: true
+- Panel > Hide system tray icons for compatible players: false
 
 ### Desklets

@@ -1,12 +1,14 @@
 #!/bin/bash
+DEVICE=$1
+
 print_text() {
-        echo -e "\n\e[1;33m$1\e[0m"
+  echo -e "\n\e[1;33m$1\e[0m"
 }
 
-print_text "Installing fonts"
-sudo mkdir -p /usr/local/share/fonts
-sudo cp -r $(dirname -- "$0")/../config-files/usr/local/share/fonts/* /usr/local/share/fonts/
-fc-cache -f
+current_dir() {
+  dirname -- "$0"
+
+}
 
 print_text "Setting up Cinnamon desktop"
 gsettings set org.cinnamon.muffin unredirect-fullscreen-windows true
@@ -47,6 +49,7 @@ if [[ -x "$(command -v alacritty)" ]]; then
 fi
 
 #print_text "Setting up Cinnamon panel"
-#gsettings set org.cinnamon panels-height "['1:40']"
+gsettings set org.cinnamon panels-height '["1:40"]'
+gsettings set org.cinnamon panels-zone-symbolic-icon-sizes '[{"panelId": 1, "left": 24, "center": 24, "right": 16}]'
 
 print_text "DONE"
