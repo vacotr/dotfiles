@@ -1,0 +1,11 @@
+pix
+hexchat
+gnome-calendar
+libreoffice-common
+rhythmbox
+hypnotix
+celluloid
+gnome-terminal
+drawing
+gdebi
+gdebi-core

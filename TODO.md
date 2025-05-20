@@ -1,7 +1,3 @@
-- install scripts
-  - Pulsar
-
-- Cinnamon setup
-  - panel
-  - applets
-  - desklets
+- document specific things instead of scripting
+- find a way to backup applet / desklet configs > ~/.config/cinnamon
+- gsettings as dconf dump

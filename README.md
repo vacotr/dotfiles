@@ -5,7 +5,7 @@ https://www.linuxmint.com/download_lmde.php
 1. `sudo apt update && sudo apt upgrade -y`
 2. Follow welcome screen recommendations
 3. Setup languages with mintlocale
-4. Run bootstrap
+4. Run `make`
 
 ## Apps
 ### External
@@ -18,10 +18,19 @@ https://www.linuxmint.com/download_lmde.php
 - Enable swipe gestures: add `export MOZ_USE_XINPUT2=1` to `~/.profile`
 - Addons: uBlock Origin, Bitwarden
 
+#### Discord
+- start minimized: `Exec=/usr/share/discord/Discord --start-minimized`
+
 #### OnlyOffice
 - Change settings: name, scaling, theme
 
 #### Steam
+- fix GUI not showing:
+  - copy desktop file to `.local/share/applications`
+  - comment out 2 lines
+    - `PrefersNonDefaultGPU`
+    - `X-KDE-RunOnDiscreteGpu`
+- start minimized: `Exec=/usr/bin/steam -silent %U`
 - launch options:
   - `gamescope -W 3440 -H 1440 -r 160 -f -- %command%`
   - `gamescope -W 1920 -H 1080 -r 60 -f -- %command%`
