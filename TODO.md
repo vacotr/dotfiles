@@ -1,3 +1,5 @@
 - document specific things instead of scripting
-- find a way to backup applet / desklet configs > ~/.config/cinnamon
-- gsettings as dconf dump
+- harden firefox (https://github.com/yokoffing/Betterfox)
+- find a way to:
+  - install applets / desklets via CLI
+  - save applets / desklets configs (~/.config/cinnamon/spices)

@@ -1,0 +1,74 @@
+[com/linuxmint/updates]
+hide-systray=true
+
+[org/cinnamon]
+alttab-minimized-aware=false
+alttab-switcher-style='thumbnails'
+panels-height=['1:40']
+panel-zone-symbolic-icon-sizes=[{"panelId": 1, "left": 24, "center": 24, "right": 16}]
+
+[org/cinnamon/desktop/applications/terminal]
+exec='alacritty'
+
+[org/cinnamon/desktop/interface]
+font-name='Atkinson Hyperlegible Next 11'
+gtk-overlay-scrollbars=false
+keyboard-layout-show-flags=false
+keyboard-layout-use-upper=true
+
+[org/cinnamon/desktop/notifications]
+bottom-notifications=true
+
+[org/cinnamon/desktop/peripherals/mouse]
+accel-profile='flat'
+
+[org/cinnamon/desktop/peripherals/touchpad]
+natural-scroll=false
+
+[org/cinnamon/desktop/screensaver]
+default-message='L O C K E D'
+font-date='Atkinson Hyperlegible Next 25'
+font-message='Atkinson Hyperlegible Next 15'
+font-time='Atkinson Hyperlegible Next 65'
+lock-delay=uint32 30
+
+[org/cinnamon/desktop/session]
+idle-delay=uint32 300
+
+[org/cinnamon/desktop/wm/preferences]
+mouse-button-modifier='<Super>'
+titlebar-font='Atkinson Hyperlegible Next 11'
+
+[org/cinnamon/gestures]
+enabled=true
+
+[org/cinnamon/muffin]
+placement-mode='center'
+unredirect-fullscreen-windows=true
+
+[org/cinnamon/settings-daemon/plugins/color]
+night-light-enabled=true
+night-light-temperature=uint32 4500
+
+[org/gnome/desktop/interface]
+document-font-name='Atkinson Hyperlegible Next 11'
+font-name='Atkinson Hyperlegible Next 11'
+monospace-font-name='Atkinson Hyperlegible Mono 11'
+
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='flat'
+
+[org/gnome/desktop/wm/preferences]
+mouse-button-modifier='<Super>'
+titlebar-font='Atkinson Hyperlegible Next 11'
+
+[org/gnome/libgnomekbd/keyboard]
+layouts=['cz\tqwerty', 'us']
+
+[org/gnome/nm-applet]
+disable-connected-notifications=true
+disable-disconnected-notifications=true
+suppress-wireless-networks-available=true
+
+[org/nemo/desktop]
+font='Atkinson Hyperlegible Next 11'

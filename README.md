@@ -8,9 +8,6 @@ https://www.linuxmint.com/download_lmde.php
 4. Run `make`
 
 ## Apps
-### External
-- Pulsar ([deb](https://pulsar-edit.dev/download.html#regular-releases))
-
 ### Tweaks
 #### Firefox
 - Enable HW acceleration: set `media.hardware-video-decoding.force-enabled` in `about:config` to `true`
@@ -20,9 +17,6 @@ https://www.linuxmint.com/download_lmde.php
 
 #### Discord
 - start minimized: `Exec=/usr/share/discord/Discord --start-minimized`
-
-#### OnlyOffice
-- Change settings: name, scaling, theme
 
 #### Steam
 - fix GUI not showing:

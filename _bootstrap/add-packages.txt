@@ -8,3 +8,4 @@ git
 tree
 stow
 extrepo
+jq
