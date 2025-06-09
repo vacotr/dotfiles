@@ -7,7 +7,7 @@ list-task:
 setup-base: install-packages remove-packages install-onlyoffice etc-configs install-fonts cinnamon-settings stow-create
 	@echo "\n DONE: setup-base \n"
 
-setup-development: install-docker install-virt-manager install-pulsar-edit
+setup-development: install-docker install-virt-manager install-pulsar-edit install-vscodium
 	@echo "\n DONE: setup-development \n"
 
 setup-gaming: install-steam install-discord
@@ -43,6 +43,12 @@ install-virt-manager:
 install-pulsar-edit:
 	@echo "\n Installing: Pulsar Editor (deb) \n"
 	bash _bootstrap/scripts/install-pulsar-edit.sh
+
+install-vscodium:
+	@echo "\n Installing: VSCodium (extrepo) \n"
+	sudo extrepo enable vscodium
+	sudo apt update
+	sudo apt install codium -y
 
 install-steam:
 	@echo "\n Installing: Steam (extrepo) \n"
