@@ -1,0 +1,6 @@
+git
+git-lfs
+tree
+adb
+fastboot
+jq
