@@ -4,7 +4,7 @@ list-task:
 	@echo " - setup-development"
 	@echo " - setup-gaming"
 
-setup-base: install-base-packages install-onlyoffice remove-packages etc-configs install-fonts cinnamon-settings stow-create
+setup-base: install-base-packages remove-packages etc-configs install-fonts cinnamon-settings stow-create
 	@echo "\n DONE: setup-base \n"
 
 setup-development: install-development-packages install-docker install-virt-manager install-pulsar-edit install-vscodium
@@ -22,12 +22,6 @@ install-development-packages:
 	@echo "\n Installing development packages \n"
 	sudo apt update
 	xargs -a _bootstrap/development-packages.txt sudo apt install -y
-
-install-onlyoffice:
-	@echo "\n Installing: OnlyOffice (extrepo) \n"
-	sudo extrepo enable onlyoffice-desktopeditors
-	sudo apt update
-	sudo apt install onlyoffice-desktopeditors -y
 
 install-docker:
 	@echo "\n Installing: Docker CE (extrepo) \n"
@@ -88,10 +82,8 @@ stow-create:
 	@echo "\n Setting up HOME configs \n"
 	stow --target=$$HOME alacritty
 	stow --target=$$HOME git
-	stow --target=$$HOME onlyoffice
 
 stow-delete:
 	@echo "\n Clearing HOME configs \n"
 	stow --target=$$HOME --delete alacritty
 	stow --target=$$HOME --delete git
-	stow --target=$$HOME --delete onlyoffice
