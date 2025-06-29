@@ -1,5 +1,10 @@
-- document specific things instead of scripting
-- harden firefox (https://github.com/yokoffing/Betterfox)
-- find a way to:
-  - install applets / desklets via CLI
-  - save applets / desklets configs (~/.config/cinnamon/spices)
+# TODO
+
+### todo
+- [] document spices (installs, settings)
+- [] add panel applets order to cinnamon-settings.ini
+- [] add Firefox user.js based on (https://github.com/yokoffing/Betterfox)
+- [] add Thunderbird user.js
+- [] script user.js setup for Firefox and Thunderbird (create new profile?: https://superuser.com/a/1860613)
+
+### complete
