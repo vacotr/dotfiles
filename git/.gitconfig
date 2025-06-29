@@ -3,3 +3,5 @@
 [user]
 	name = Václav Otruba
 	email = dev@vaclavotruba.cz
+[pull]
+	ff = only

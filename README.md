@@ -2,7 +2,7 @@
 https://www.linuxmint.com/download_lmde.php
 
 ## Post-install
-1. `sudo apt update && sudo apt upgrade -y`
+1. Update system
 2. Follow welcome screen recommendations
 3. Setup languages with mintlocale
 4. Run `make`
