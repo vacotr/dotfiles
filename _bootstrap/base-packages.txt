@@ -4,8 +4,5 @@ chromium
 gimp
 power-profiles-daemon
 mint-backgrounds-wallpapers
-git
-tree
 stow
 extrepo
-jq
