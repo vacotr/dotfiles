@@ -1,6 +1,7 @@
 pix
 hexchat
 gnome-calendar
+libreoffice-common
 rhythmbox
 hypnotix
 celluloid
