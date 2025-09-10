@@ -49,8 +49,8 @@ install-steam:
 	sudo extrepo enable steam
 	sudo apt update
 	sudo apt install steam gamescope -y
-    sudo extrepo disable steam
-    sudo apt update
+	sudo extrepo disable steam
+	sudo apt update
 
 install-discord:
 	@echo "\n Installing: Discord (deb) \n"
@@ -67,7 +67,7 @@ cinnamon-settings:
 
 etc-configs:
 	@echo "\n Setting up X11 configs \n"
-	sudo cp _bootstrap/etc/extrepo/config.yml /etc/extrepo/config.yml
+	sudo cp _bootstrap/etc/extrepo/config.yaml /etc/extrepo/config.yaml
 	sudo cp _bootstrap/etc/drirc /etc/
 	sudo cp _bootstrap/etc/X11/xorg.conf.d/20-amdgpu.$$(hostname).conf /etc/X11/xorg.conf.d/20-amdgpu.conf
 
