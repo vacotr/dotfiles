@@ -4,10 +4,10 @@ list-task:
 	@echo " - setup-development"
 	@echo " - setup-gaming"
 
-setup-base: install-base-packages install-onlyoffice remove-packages etc-configs install-fonts cinnamon-settings stow-create
+setup-base: install-base-packages remove-packages etc-configs cinnamon-settings stow-create
 	@echo "\n DONE: setup-base \n"
 
-setup-development: install-development-packages install-docker install-virt-manager install-pulsar-edit install-vscodium
+setup-development: install-development-packages install-docker install-virt-manager install-vscodium
 	@echo "\n DONE: setup-development \n"
 
 setup-gaming: install-steam install-discord
@@ -23,12 +23,6 @@ install-development-packages:
 	sudo apt update
 	xargs -a _bootstrap/development-packages.txt sudo apt install -y
 
-install-onlyoffice:
-	@echo "\n Installing: OnlyOffice (extrepo) \n"
-	sudo extrepo enable onlyoffice-desktopeditors
-	sudo apt update
-	sudo apt install onlyoffice-desktopeditors -y
-
 install-docker:
 	@echo "\n Installing: Docker CE (extrepo) \n"
 	sudo extrepo enable docker-ce
@@ -43,10 +37,6 @@ install-virt-manager:
 	sudo usermod -aG kvm $$USER
 	sudo virsh net-autostart default
 
-install-pulsar-edit:
-	@echo "\n Installing: Pulsar Editor (deb) \n"
-	bash _bootstrap/scripts/install-pulsar-edit.sh
-
 install-vscodium:
 	@echo "\n Installing: VSCodium (extrepo) \n"
 	sudo extrepo enable vscodium
@@ -59,6 +49,8 @@ install-steam:
 	sudo extrepo enable steam
 	sudo apt update
 	sudo apt install steam gamescope -y
+    sudo extrepo disable steam
+    sudo apt update
 
 install-discord:
 	@echo "\n Installing: Discord (deb) \n"
@@ -69,18 +61,13 @@ remove-packages:
 	xargs -a _bootstrap/remove-packages.txt sudo apt remove -y
 	sudo apt autoremove
 
-install-fonts:
-	@echo "\n Installing fonts \n"
-	sudo mkdir -p /usr/local/share/fonts
-	sudo cp -r _bootstrap/fonts/* /usr/local/share/fonts/
-	fc-cache -f
-
 cinnamon-settings:
 	@echo "\n Setting up Cinnamon desktop \n"
 	dconf load / < _bootstrap/cinnamon-settings.ini
 
 etc-configs:
 	@echo "\n Setting up X11 configs \n"
+	sudo cp _bootstrap/etc/extrepo/config.yml /etc/extrepo/config.yml
 	sudo cp _bootstrap/etc/drirc /etc/
 	sudo cp _bootstrap/etc/X11/xorg.conf.d/20-amdgpu.$$(hostname).conf /etc/X11/xorg.conf.d/20-amdgpu.conf
 
@@ -88,10 +75,8 @@ stow-create:
 	@echo "\n Setting up HOME configs \n"
 	stow --target=$$HOME alacritty
 	stow --target=$$HOME git
-	stow --target=$$HOME onlyoffice
 
 stow-delete:
 	@echo "\n Clearing HOME configs \n"
 	stow --target=$$HOME --delete alacritty
 	stow --target=$$HOME --delete git
-	stow --target=$$HOME --delete onlyoffice
