@@ -75,8 +75,10 @@ stow-create:
 	@echo "\n Setting up HOME configs \n"
 	stow --target=$$HOME alacritty
 	stow --target=$$HOME git
+	stow --target=$$HOME gtk-3.0
 
 stow-delete:
 	@echo "\n Clearing HOME configs \n"
 	stow --target=$$HOME --delete alacritty
 	stow --target=$$HOME --delete git
+	stow --target=$$HOME --delete gtk-3.0

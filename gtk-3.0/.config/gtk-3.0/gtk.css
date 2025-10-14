@@ -1,0 +1,6 @@
+decoration,
+window,
+window .titlebar,
+.default-decoration {
+    border-radius: 0;
+}
