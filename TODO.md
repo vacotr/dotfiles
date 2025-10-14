@@ -6,6 +6,7 @@
 - [] add Firefox user.js based on (https://github.com/yokoffing/Betterfox)
 - [] add Thunderbird user.js
 - [] script user.js setup for Firefox and Thunderbird (create new profile?: https://superuser.com/a/1860613)
-- [] edit extrepo config (/etc/extrepo/config.yml)
+- [] add steam, discord desktop files
+- [x] edit extrepo config (/etc/extrepo/config.yml)
 
 ### complete
