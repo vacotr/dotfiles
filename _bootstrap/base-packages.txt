@@ -1,9 +1,0 @@
-mpv
-alacritty
-chromium
-gimp
-power-profiles-daemon
-mint-backgrounds-wallpapers
-fonts-ibm-plex
-stow
-extrepo

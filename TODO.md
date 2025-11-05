@@ -7,6 +7,6 @@
 - [] add Thunderbird user.js
 - [] script user.js setup for Firefox and Thunderbird (create new profile?: https://superuser.com/a/1860613)
 - [] add steam, discord desktop files
-- [x] edit extrepo config (/etc/extrepo/config.yml)
+- [] replace stow (rsync --recursive gtk-3.0/.config/gtk-3.0/ ~/.config/gtk-3.0/)
 
 ### complete
