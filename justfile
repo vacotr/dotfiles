@@ -1,3 +1,7 @@
+hostname := `hostname`
+user := env('USER')
+home := env('HOME')
+
 list:
 	@echo "Main tasks available:"
 	@echo " - setup-base"
@@ -6,6 +10,7 @@ list:
 
 setup-base: install-base-packages install-deb-get remove-packages etc-configs cinnamon-settings
 	@echo "\n DONE: setup-base \n"
+	@sudo apt update -y
 
 setup-development: install-development-packages install-docker install-virt-manager install-vscodium
 	@echo "\n DONE: setup-development \n"
@@ -29,9 +34,9 @@ install-steam:
 	@echo "\n Installing: Steam (deb) \n"
 	@sudo dpkg --add-architecture i386
 	@sudo apt update
-	@wget -O $$HOME/Downloads/steam.deb https://cdn.fastly.steamstatic.com/client/installer/steam.deb -q --show-progress
-	@captain $$HOME/Downloads/steam.deb
-	@rm $$HOME/Downloads/steam.deb
+	@wget -O {{home}}/Downloads/steam.deb https://cdn.fastly.steamstatic.com/client/installer/steam.deb -q --show-progress
+	@captain {{home}}/Downloads/steam.deb
+	@rm {{home}}/Downloads/steam.deb
 	@sudo apt install mangohud mangohud:i386 libgamemodeauto0:i386 -y
 
 install-discord:
@@ -45,13 +50,13 @@ install-vscodium:
 install-docker:
 	@echo "\n Installing: Docker \n"
 	@sudo apt install docker.io docker-compose -y
-	@sudo usermod -aG docker $$USER
+	@sudo usermod -aG docker {{user}}
 
 install-virt-manager:
 	@echo "\n Installing: virt-manager \n"
 	@sudo apt install virt-manager bridge-utils -y
-	@sudo usermod -aG libvirt $$USER
-	@sudo usermod -aG kvm $$USER
+	@sudo usermod -aG libvirt {{user}}
+	@sudo usermod -aG kvm {{user}}
 	@sudo virsh net-autostart default
 
 remove-packages:
@@ -65,8 +70,8 @@ cinnamon-settings:
 
 etc-configs:
 	@echo "\n Setting up X11 configs \n"
-	@sudo cp _bootstrap/etc/X11/xorg.conf.d/20-amdgpu.$$(hostname).conf /etc/X11/xorg.conf.d/20-amdgpu.conf
+	@sudo cp _bootstrap/etc/X11/xorg.conf.d/20-amdgpu.{{hostname}}.conf /etc/X11/xorg.conf.d/20-amdgpu.conf
 
 setup-dots:
 	@echo "\n Setting up dots \n"
-	@rsync --recursive dots/ $$HOME/
+	@rsync --recursive dots/ {{home}}/
