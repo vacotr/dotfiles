@@ -8,6 +8,34 @@ https://www.linuxmint.com/download_lmde.php
 4. Run `just`
 
 ## Apps
+**general**
+- firefox
+- chromium
+- spotify (flatpak)
+- vicinae (script)
+- alacritty
+- onlyoffice (repo / deb)
+- thunderbird
+- transmission
+- mpv
+- gimp
+
+**dev**
+- vscodium (repo / deb)
+- docker
+- virt-manager
+
+**work**
+- slack (flatpak)
+
+**gaming**
+- steam (deb)
+- discord (flatpak)
+
+**???**
+- bitwarden
+
+
 ### Tweaks
 #### Firefox
 - use [Betterfox](https://github.com/yokoffing/Betterfox)

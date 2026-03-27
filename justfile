@@ -8,14 +8,14 @@ list:
 	@echo " - setup-development"
 	@echo " - setup-gaming"
 
-setup-base: install-base-packages install-deb-get remove-packages etc-configs cinnamon-settings
+setup-base: install-base-packages remove-packages etc-configs cinnamon-settings
 	@echo "\n DONE: setup-base \n"
 	@sudo apt update -y
 
-setup-development: install-development-packages install-docker install-virt-manager install-vscodium
+setup-development: install-development-packages install-docker install-virt-manager
 	@echo "\n DONE: setup-development \n"
 
-setup-gaming: install-steam install-discord
+setup-gaming: install-steam
 	@echo "\n DONE: setup-gaming \n"
 
 install-base-packages:
@@ -26,10 +26,6 @@ install-development-packages:
 	@echo "\n Installing development packages \n"
 	@xargs -a _bootstrap/development-packages.list sudo apt install -y
 
-install-deb-get:
-	@echo "\n Installing: deb-get (deb-get) \n"
-	@curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
-
 install-steam:
 	@echo "\n Installing: Steam (deb) \n"
 	@sudo dpkg --add-architecture i386
@@ -38,14 +34,6 @@ install-steam:
 	@captain {{home}}/Downloads/steam.deb
 	@rm {{home}}/Downloads/steam.deb
 	@sudo apt install mangohud mangohud:i386 libgamemodeauto0:i386 -y
-
-install-discord:
-	@echo "\n Installing: Discord (deb-get) \n"
-	@sudo deb-get install discord -y
-
-install-vscodium:
-	@echo "\n Installing: VSCodium (deb-get) \n"
-	@sudo deb-get install codium -y
 
 install-docker:
 	@echo "\n Installing: Docker \n"
